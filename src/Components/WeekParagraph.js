@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 function WeekParagraph() {
   return (
-    <Status>This week has been</Status>
+    <Status>Your Previous Entries</Status>
   );
 }
 

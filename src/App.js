@@ -1,80 +1,50 @@
 import logo from './logo.svg';
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import './App.css';
 import Header from './Components/Header';
 import SubHeader from './Components/SubHeader';
 import Paragraph from './Components/Paragraph';
-import Button from './Components/Mood';
-import Week from './Components/Week';
+import MoodList from './Components/MoodList';
+import WeekParagraph from './Components/WeekParagraph';
+import MoodList2 from './Components/PrevMoodList';
+import moods from './mood-data';
 
 
-function App() {
+const App = (props) => {
+
+  const [moods, setMoods] = useState(null);
+
   return (
     <>
       <div>
         <Header />
         <SubHeader />
       </div>
-      <Split>
-        <Button 
-          title="Happy"
-         />
-        <Button 
-          title="Sad"
-        />
-        <Button 
-          title="indifferent"
-        />
-      </Split>
-      <Split1>
-        <Button 
-          title="angry"
-        />
-        <Button 
-          title="Awkward"
-        />
-        <Button
-          title="Content"
-        />
-      </Split1>
-      <Split2>
-        <Button
-          Color="blue"
-          appearance='primary'
-          title="Lazy"
-        />
-        <Button
-          title="Busy"
-        />
-        <Button 
-          title="Calm"
-        />
-      </Split2>
+      <Splits>
+        <MoodList moodCategories={moods} />
+      </Splits>
       <div>
         <Paragraph />
       </div>
       <div className="split3">
-        <Week />
+      <WeekParagraph />
+      <MoodList2 callback{...setMoods}/>
       </div>
     </>
   );
 }
 
-const Split = styled.div`
-text-align: center
+const Splits = styled.div`
+margin: 10px 400px 10px 400px;
+display: flex;
+    flex-direction: row;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-content: center;
+    gap: 50px;
+    flex-shrink: 0;
 `
-
-const Split1 = styled.div`
-text-align: center
-`
-
-const Split2 = styled.div`
-text-align: center
-`
-const Split3 = styled.div`
-text-align: center
-`
-
 
 export default App;
