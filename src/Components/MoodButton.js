@@ -1,20 +1,12 @@
 import React, {useCallback} from 'react';
 import styled from 'styled-components';
-// import { useState } from 'react';
-// import { Button } from "rsuite";
-// import "rsuite/dist/rsuite.min.css";
-
-// const [albumRating, setAlbumRating] = useState(0);
-
-// const handleClick = () => {
-
-// };
+import moods from '../mood-data';
 
 let Button = ({name, img}) => {
   return (
     <form>
     <Buttons>
-      <pic>{img}</pic>
+      {/* <pic>{img}</pic> */}
       <Title>{name}</Title>
     </Buttons>
     </form>

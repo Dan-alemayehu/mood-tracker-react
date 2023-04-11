@@ -6,10 +6,9 @@ import Header from './Components/Header';
 import SubHeader from './Components/SubHeader';
 import Paragraph from './Components/Paragraph';
 import MoodList from './Components/MoodList';
-import WeekParagraph from './Components/WeekParagraph';
-import MoodList2 from './Components/PrevMoodList';
-import moods from './mood-data';
-
+// import WeekParagraph from './Components/WeekParagraph';
+// import MoodList2 from './Components/PrevMoodList';
+// import moods from './mood-data';
 
 const App = (props) => {
 
@@ -28,8 +27,8 @@ const App = (props) => {
         <Paragraph />
       </div>
       <div className="split3">
-      <WeekParagraph />
-      <MoodList2 callback{...setMoods}/>
+      {/* <WeekParagraph />
+      <MoodList2 callback{...setMoods}/> */}
       </div>
     </>
   );
