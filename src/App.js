@@ -6,6 +6,7 @@ import Header from './Components/Header';
 import SubHeader from './Components/SubHeader';
 import Paragraph from './Components/Paragraph';
 import MoodList from './Components/MoodList';
+import InputMessage from './Components/Input';
 // import WeekParagraph from './Components/WeekParagraph';
 // import MoodList2 from './Components/PrevMoodList';
 // import moods from './mood-data';
@@ -13,6 +14,7 @@ import MoodList from './Components/MoodList';
 const App = (props) => {
 
   const [moods, setMoods] = useState(null);
+  
 
   return (
     <>
@@ -31,8 +33,7 @@ const App = (props) => {
       <MoodList2 callback{...setMoods}/> */}
       </div>
     </>
-  );
-}
+  );}
 
 const Splits = styled.div`
 margin: 10px 400px 10px 400px;

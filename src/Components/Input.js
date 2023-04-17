@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import WeekParagraph from "./WeekParagraph";
 
@@ -7,6 +7,9 @@ function InputMessage() {
     const [messageInfo, setMessageInfo] = useState({
             name: '',
         });
+
+    const current = new Date();
+    const date = `${current.getMonth() +1}/${current.getDate()}/${current.getFullYear()}`;
 
     const handleSubmit = (event) =>{
         event.preventDefault();
@@ -21,11 +24,10 @@ function InputMessage() {
 
     const [messages, setMessages] = useState([])
 
-
     const handleInputChange = (event) => {
         setMessageInfo({
             ...messageInfo,
-            [event.target.name]:event.target.value
+            [event.target.name]: event.target.value
         })
     };
 
@@ -33,7 +35,7 @@ function InputMessage() {
         <>
         <form onSubmit={handleSubmit}>
             <Respective>
-                Enter in a mood selected from the options above:
+                Enter in a mood selected from the options above:             
                 <input 
                     type="text" 
                     name="name" 
@@ -51,7 +53,8 @@ function InputMessage() {
             <Button>
                 <h3>{message.name}</h3>
             </Button>
-           </div> 
+            <Log>Date of Entry: {date}</Log>
+            </div> 
         ))}
         </>
     );
@@ -68,4 +71,8 @@ const Button = styled.button`
     width: 150px;
     height: 150px;
     border-radius: 30%;
+`
+
+const Log = styled.p`
+    color: white;
 `
